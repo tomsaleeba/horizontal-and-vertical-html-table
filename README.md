@@ -1,3 +1,6 @@
+# Demo
+Check it out live at https://tomsaleeba.github.io/horizontal-and-vertical-html-table/
+
 # What is this?
 This builds on the work at https://css-tricks.com/examples/ResponsiveTables/responsive.php. The linked example is a responsive table that snaps to displaying all columns as lists at certain media query points. I don't need the responsive element but I do need the list displaying capability.
 
