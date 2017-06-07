@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Responsive Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!--[if !IE]><!-->
+  <style>
+    /* Force table to not be like tables anymore */
+
+    td.vert-cell {
+      display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+
+    th.vert-cell,
+    .hide {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    td.vert-cell {
+      /* Behave  like a "row" */
+      border: none;
+      border-top: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      position: relative;
+      padding-left: 20%;
+    }
+
+    td.vert-cell:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 15%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+
+    th.hidden-header {
+      width: 60%;
+    }
+
+    th.hidden-header:before {
+      content: "More stuff";
+    }
+    /* Label the data */
+    td.vert-cell:nth-of-type(6):before { content: "Porn Name"; }
+    td.vert-cell:nth-of-type(7):before { content: "Date of Birth"; }
+    td.vert-cell:nth-of-type(8):before { content: "Dream Vacation City"; }
+    td.vert-cell:nth-of-type(9):before { content: "GPA"; }
+    td.vert-cell:nth-of-type(10):before { content: "Arbitrary Data"; }
+
+    .the-table {
+      min-width: 640px;
+    }
+
+    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+      td.vert-cell { padding-left: 25%; }
+      td.vert-cell:before { width: 20%; }
+    }
+
+    @media only screen and (min-width: 861px) and (max-width: 1024px) {
+      td.vert-cell { padding-left: 35%; }
+      td.vert-cell:before { width: 30%; }
+    }
+
+    @media only screen and (max-width: 860px) {
+      td.vert-cell { padding-left: 50%; }
+      td.vert-cell:before { width: 45%; }
+    }
+  </style>
+  <!--<![endif]-->
+</head>
+
+<body>
+  <div id="demo-top-bar">
+    <h2 id="demo-bar-inside">Horizontal and vertical table</h2>
+  </div>
+  <div id="page-wrap">
+
+    <h1>Responsive Table</h1>
+
+    <p>Go to <a href="https://css-tricks.com/examples/ResponsiveTables/index.php">Non-Responsive Table</a></p>
+
+    <p>This is the exact same table, only has @media queries applied to is so that when the screen is too narrow, it reformats
+      (via only CSS) to make each row a bit like it's own table. This makes for much more repetition and vertical space needed,
+      but it fits within the horizontal space, so only natural vertical scrolling is needed to explore the data.
+    </p>
+
+    <table class="the-table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Job Title</th>
+          <th>Favorite Color</th>
+          <th>Wars or Trek?</th>
+          <th class="hidden-header"><span class="hide">Porn Name</span></th>
+          <th class="vert-cell">Date of Birth</th>
+          <th class="vert-cell">Dream Vacation City</th>
+          <th class="vert-cell">GPA</th>
+          <th class="vert-cell">Arbitrary Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>James</td>
+          <td>Matman</td>
+          <td>Chief Sandwich Eater</td>
+          <td>Lettuce Green</td>
+          <td>Trek</td>
+          <td class="vert-cell">Digby Green</td>
+          <td class="vert-cell">January 13, 1979</td>
+          <td class="vert-cell">Gotham City</td>
+          <td class="vert-cell">3.1</td>
+          <td class="vert-cell">The LCI is a MODIS image index of soil exposure. The LCI provides information on soil exposure temporal dynamics.
+            The RSMA is an image index derived from MODIS satellite imagery and produces a measure of change in relative
+            fractional cover of photosynthetic vegetation (PV) non-photosynthetic vegetation (NPV) and soil relative to a
+            baseline date.</td>
+        </tr>
+        <tr>
+          <td>The</td>
+          <td>Tick</td>
+          <td>Crimefighter Sorta</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td class="vert-cell">John Smith</td>
+          <td class="vert-cell">July 19, 1968</td>
+          <td class="vert-cell">Athens</td>
+          <td class="vert-cell">N/A</td>
+          <td class="vert-cell">Edlund, Ben (July 1996).</td>
+        </tr>
+        <tr>
+          <td>Jokey</td>
+          <td>Smurf</td>
+          <td>Giving Exploding Presents</td>
+          <td>Smurflow</td>
+          <td>Smurf</td>
+          <td class="vert-cell">Smurflane Smurfmutt</td>
+          <td class="vert-cell">Smurfuary Smurfteenth, 1945</td>
+          <td class="vert-cell">New Smurf City</td>
+          <td class="vert-cell">4.Smurf</td>
+          <td class="vert-cell">One</td>
+        </tr>
+        <tr>
+          <td>Cindy</td>
+          <td>Beyler</td>
+          <td>Sales Representative</td>
+          <td>Red</td>
+          <td>Wars</td>
+          <td class="vert-cell">Lori Quivey</td>
+          <td class="vert-cell">July 5, 1956</td>
+          <td class="vert-cell">Paris</td>
+          <td class="vert-cell">3.4</td>
+          <td class="vert-cell">3451</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td class="vert-cell">Steve 42nd</td>
+          <td class="vert-cell">December 13, 1982</td>
+          <td class="vert-cell">Las Vegas</td>
+          <td class="vert-cell">1.9</td>
+          <td class="vert-cell">Under the couch</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <style type="text/css" style="display: none !important;">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #demo-top-bar {
+      text-align: left;
+      background: #222;
+      position: relative;
+      zoom: 1;
+      width: 100% !important;
+      z-index: 6000;
+      padding: 20px 0 20px;
+    }
+
+    #demo-bar-inside {
+      width: 960px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+  </style>
+</body>
+
+</html>
